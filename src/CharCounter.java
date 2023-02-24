@@ -27,17 +27,17 @@ public class CharCounter {
         char keyChar = 0;
         Map<Character, Integer> resMap = new HashMap<>();
         for (char mChar : map.keySet()) {
-            if (map.get(mChar) > maxCount) {
+            if (map.get(mChar) > maxCount && Character.isLetter(mChar)) {
                 maxCount = map.get(mChar);
             }
         }
         for (char mChar : map.keySet()) {
-            if (map.get(mChar) < minCount) {
+            if (map.get(mChar) < minCount && Character.isLetter(mChar)) {
                 minCount = map.get(mChar);
             }
         }
         for (char mChar : map.keySet()) {
-            if (map.get(mChar) == maxCount || map.get(mChar) == minCount) {
+            if (map.get(mChar) == maxCount || map.get(mChar) == minCount && Character.isLetter(mChar)) {
                 resMap.put(mChar, map.get(mChar));
             }
         }
