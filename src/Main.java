@@ -10,14 +10,11 @@ public class Main {
             "anim id est laborum.";
     public static void main(String[] args) {
         Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < textField.length(); i++) {
-            if (!map.containsKey(textField.charAt(i))) {
-                map.put(textField.charAt(i), 1);//нет такой мапы, запишем ее со значением 1
-            } else {
-                int value = map.get(textField.charAt(i)) + 1;//уже есть такая мапа
-                map.put(textField.charAt(i), value);//добавим к ней 1
-            }
+        CharCounter chrC = new CharCounter(textField);
+        map.putAll(chrC.maxMinChar());
+        for (char chr : map.keySet()) {
+            int value = map.get(chr);
+            System.out.println(chr + " встречается " + value + " раз");
         }
-        System.out.println("Hello world!");
     }
 }
