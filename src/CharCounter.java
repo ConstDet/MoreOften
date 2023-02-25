@@ -13,7 +13,6 @@ public class CharCounter {
 
     private void charCount() {
         for (int i = 0; i < textField.length(); i++) {
-            char chr = textField.charAt(i);
             if (!map.containsKey(textField.charAt(i)) && Character.isLetter(textField.charAt(i))) {
                 map.put(textField.charAt(i), 1);//нет такой мапы, запишем ее со значением 1
             } else if (Character.isLetter(textField.charAt(i))) {
