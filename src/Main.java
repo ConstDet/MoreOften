@@ -1,3 +1,5 @@
+import java.util.Set;
+
 public class Main {
     private static String textField = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
             "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis " +
@@ -7,8 +9,9 @@ public class Main {
             "anim id est laborum.";
     public static void main(String[] args) {
         CharCounter chrC = new CharCounter(textField);
-        for (char chr : chrC.maxMinChar().keySet()) {
-            int value = chrC.maxMinChar().get(chr);
+        Set<Character> set = chrC.maxMinCountChar().keySet();
+        for (char chr : set) {
+            int value = chrC.maxMinCountChar().get(chr);
             System.out.println(chr + " встречается " + value + " раз");
         }
     }
