@@ -24,7 +24,6 @@ public class CharCounter {
 
     public Map<Character, Integer> maxMinCountChar() {
         int maxCount = -1, minCount = Integer.MAX_VALUE;
-        char keyChar = 0;
         Map<Character, Integer> resMap = new HashMap<>();
         for (char mChar : map.keySet()) {//вычисляем максимальное кол-во символов
             if (map.get(mChar) > maxCount) {
