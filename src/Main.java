@@ -9,9 +9,9 @@ public class Main {
             "anim id est laborum.";
     public static void main(String[] args) {
         CharCounter chrC = new CharCounter(textField);
-        Set<Character> set = chrC.maxMinCountChar().keySet();
+        Set<Character> set = chrC.CountChar().keySet();
         for (char chr : set) {
-            int value = chrC.maxMinCountChar().get(chr);
+            int value = chrC.CountChar().get(chr);
             System.out.println(chr + " встречается " + value + " раз");
         }
     }

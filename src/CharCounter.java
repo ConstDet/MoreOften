@@ -22,19 +22,32 @@ public class CharCounter {
         }
     }
 
-    public Map<Character, Integer> maxMinCountChar() {
-        int maxCount = -1, minCount = Integer.MAX_VALUE;
-        Map<Character, Integer> resMap = new HashMap<>();
+    public int maxChar() {
+        if (map.size() == 0) return -1;
+        int maxCount = -1;
         for (char mChar : map.keySet()) {//вычисляем максимальное кол-во символов
             if (map.get(mChar) > maxCount) {
                 maxCount = map.get(mChar);
             }
         }
+        return maxCount;
+    }
+
+    public int minChar() {
+        if (map.size() == 0) return -1;
+        int minCount = Integer.MAX_VALUE;
         for (char mChar : map.keySet()) {//минимальное
             if (map.get(mChar) < minCount) {
                 minCount = map.get(mChar);
             }
         }
+        return minCount;
+    }
+
+    public Map<Character, Integer> CountChar() {
+        int maxCount = maxChar(), minCount = minChar();
+        Map<Character, Integer> resMap = new HashMap<>();
+        if (map.size() == 0) return null;
         for (char mChar : map.keySet()) {//записываем только мин и макс символы
             if (map.get(mChar) == maxCount || map.get(mChar) == minCount) {
                 resMap.put(mChar, map.get(mChar));
